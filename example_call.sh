@@ -1,0 +1,1 @@
+curl -X POST https://us-central1-tombstone-333412.cloudfunctions.net/function-test -H "Content-Type: application/json" -d '{"domain": "google.com"}' 

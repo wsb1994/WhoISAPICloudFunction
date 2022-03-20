@@ -1,0 +1,38 @@
+explanation:
+1. Cloud Function/ Lambda function takes in a json body as a post request, in the format 
+{
+    "domain": "domain.com"
+}
+providing information about that domain.
+
+expectations:
+
+1. The code run in this repo is intended to run on pop_os!, Ubuntu, Mint, or a derivative that uses apt-get
+2. You must have 100% of the dependencies installed.
+3. There is no automated install script provided, you must install manually
+4. There is no guarantee that cors was done correctly, as it was an afterthought. 
+5. I expect that to view the results you will be using postman, curl, or another program
+
+
+Notes:
+1. Json extraction to golang structs were generated using automated tools
+2. Mocks provided were generated using automated tools.
+3. The majority of this code is re-engineered code provided by google + the necessary bits to return the whois api call
+4. An interface was provided to either initially or later re-factor in calls utilizing the interface to alter the behavior of the request based on which interface it fits
+5. I determined point 4 to be a pain and elected not to do it, despite it being a logical step.
+6. An interface takes a moment to create, and can provide a lot of value, even if you elect to not use it. 
+
+
+dependencies:
+
+1. Google Cloud SDK
+2. Hashicorp Terraform
+3. Golang 1.16 (not necessary unless you want to run tests locally)
+4. a Valid API key from https://www.whoisxmlapi.com
+
+
+deployment:
+
+1. navigate to ./Terraform
+2. terraform init
+3. terraform apply
